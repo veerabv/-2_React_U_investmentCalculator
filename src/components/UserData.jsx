@@ -9,18 +9,18 @@ function UserData({ onChange,scheme }) {
             <label>Initial Investment</label>
             <input
               type="number"
-              onChange={(e) => onChange("initial", e.target.value)}
+              onChange={(e) => onChange("initialInvestment", e.target.value)}
               required
-              value={scheme.initial}
+              value={scheme.initialInvestment}
             />
           </p>
           <p>
             <label>Annual Investment</label>
             <input
               type="number"
-              onChange={(e) => onChange("final", e.target.value)}
+              onChange={(e) => onChange("annualInvestment", e.target.value)}
               required
-              value={scheme.final}
+              value={scheme.annualInvestment}
             />
           </p>
         </div>
@@ -29,9 +29,9 @@ function UserData({ onChange,scheme }) {
             <label>Expected Return</label>
             <input
               type="number"
-              onChange={(e) => onChange("return", e.target.value)}
+              onChange={(e) => onChange("expectedReturn", e.target.value)}
               required
-              value={scheme.return}
+              value={scheme.expectedReturn}
             />
           </p>
           <p>

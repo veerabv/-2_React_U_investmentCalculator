@@ -5,9 +5,9 @@ import { useState } from "react";
 
 function App() {
   const [scheme, setScheme] = useState({
-    initial: 1000,
-    final: 1200,
-    return: 6,
+    initialInvestment: 1000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
     duration: 10,
   });
 
@@ -15,7 +15,7 @@ function handleChange(inputIdentifier, newValue){
   setScheme((ps) => {
     return {
       ...ps,
-      [inputIdentifier]: newValue,
+      [inputIdentifier]: +newValue,
     }
   })
 }
