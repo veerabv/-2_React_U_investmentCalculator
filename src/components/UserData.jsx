@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function UserData() {
-  const [scheme, setScheme] = useState({
-    initial: 1000,
-    final: 1200,
-    return: 6,
-    duration: 10,
-  });
+function UserData({ onChange,scheme }) {
   return (
     <>
       <section id="user-input">
@@ -15,9 +9,7 @@ function UserData() {
             <label>Initial Investment</label>
             <input
               type="number"
-              onChange={(e) =>
-                setScheme((ps) => ({ ...ps, initial: e.target.value }))
-              }
+              onChange={(e) => onChange("initial", e.target.value)}
               required
               value={scheme.initial}
             />
@@ -26,9 +18,7 @@ function UserData() {
             <label>Annual Investment</label>
             <input
               type="number"
-              onChange={(e) =>
-                setScheme((ps) => ({ ...ps, final: e.target.value }))
-              }
+              onChange={(e) => onChange("final", e.target.value)}
               required
               value={scheme.final}
             />
@@ -39,9 +29,7 @@ function UserData() {
             <label>Expected Return</label>
             <input
               type="number"
-              onChange={(e) =>
-                setScheme((ps) => ({ ...ps, return: e.target.value }))
-              }
+              onChange={(e) => onChange("return", e.target.value)}
               required
               value={scheme.return}
             />
@@ -50,9 +38,7 @@ function UserData() {
             <label>Duration</label>
             <input
               type="number"
-              onChange={(e) =>
-                setScheme((ps) => ({ ...ps, duration: e.target.value }))
-              }
+              onChange={(e) => onChange("duration", e.target.value)}
               required
               value={scheme.duration}
             />
