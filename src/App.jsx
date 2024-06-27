@@ -11,6 +11,8 @@ function App() {
     duration: 10,
   });
 
+  const inputIsValid = scheme.duration >=1;
+
 function handleChange(inputIdentifier, newValue){
   setScheme((ps) => {
     return {
@@ -20,11 +22,13 @@ function handleChange(inputIdentifier, newValue){
   })
 }
 
+
   return (
     <>
       <Header />
       <UserData onChange= {handleChange}  scheme = {scheme}/>
-      <Result scheme = {scheme}/>
+      {!inputIsValid && <p className="center">Please Enter the duration greater than Zero</p>}
+      {inputIsValid && <Result scheme = {scheme}/>}
     </>
   );
 }
